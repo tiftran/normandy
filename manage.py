@@ -4,6 +4,7 @@ import sys
 import warnings
 
 
+
 warnings.filterwarnings(
     "ignore",
     message="The psycopg2 wheel package will be renamed from release 2.8; in order to keep "
@@ -15,6 +16,9 @@ warnings.filterwarnings(
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "normandy.settings")
     os.environ.setdefault("DJANGO_CONFIGURATION", "Development")
+
+    print(os.environ.get("DJANGO_SETTING_MODULE"))
+    
 
     from configurations.management import execute_from_command_line
 
