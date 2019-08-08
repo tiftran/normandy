@@ -27,6 +27,10 @@ load_initial_data: build
 
 load_data: migrate load_geo_location update_actions load_initial_data
 
+lint: SHELL:=/bin/bash -O extglob
+lint:
+	docker-compose run app therapist run --disable-git ./!(node_modules|assets|docs)
+
 kill:
 	docker ps -a -q | xargs docker kill;docker ps -a -q | xargs docker rm
 
