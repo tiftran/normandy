@@ -12,6 +12,7 @@ services:
       - public_nw
     volumes:
       - .:/app
+      - /app/node_modules
     environment:
       - DATABASE_URL=postgres://postgres:postgres@db/normandy
     ports:
