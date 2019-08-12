@@ -28,7 +28,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - public_nw
+      - private_nw
 
 volumes:
   db_volume:
