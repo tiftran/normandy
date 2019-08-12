@@ -36,6 +36,9 @@ lint: SHELL:=/bin/bash -O extglob
 lint:
 	docker-compose run app therapist run --disable-git ./!(node_modules|assets|docs)
 
+code_format: SHELL:=/bin/bash -O extglob
+code_format:
+	docker-compose run app therapist run --fix --disable-git ./!(node_modules|assets|docs)
 check: check_migrations lint test
 
 kill:
