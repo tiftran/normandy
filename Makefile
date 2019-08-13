@@ -3,7 +3,7 @@ geo_data: GeoLite2-Country.mmdb
 GeoLite2-Country.mmdb:
 	./bin/download_geolite2.sh
 
-build:
+build: geo_data
 	docker-compose build
 
 createuser: build
