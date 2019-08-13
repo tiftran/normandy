@@ -10,6 +10,7 @@ services:
       - db
     networks:
       - public_nw
+      - private_nw
     volumes:
       - .:/app
       - /app/node_modules
